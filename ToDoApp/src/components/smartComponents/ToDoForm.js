@@ -3,7 +3,7 @@ import { View, Text, StatusBar, Platform } from 'react-native';
 import { Grid, Row, Col } from 'react-native-easy-grid'
 import ToDoItem from '../smartComponents/ToDoItem';
 import { Metrics } from "../../Themes";
-import {myTab} from "../presentationComponents";
+
 import {Card, Tabs, Header, Container, Body, Tab} from "native-base";
 import Colors from "../../Themes/Colors";
 
@@ -69,8 +69,7 @@ export default class ToDoForm extends Component {
                     {this.headerContent()}
 
                     <Row size={90} >
-                        <Tabs noShadow tabBarUnderlineStyle={{borderBottomWidth: 3, borderColor: Colors.facebook}}>
-                            <myTab/>
+                        <Tabs tabBarUnderlineStyle={{borderBottomWidth: 3, borderColor: Colors.facebook}} scrollWithoutAnimation>
                             <Tab
                                 noShadow
                                 heading="All"
@@ -80,11 +79,14 @@ export default class ToDoForm extends Component {
                                 activeTabStyle={styles.activeTabStyle}
                                 activeTextStyle={styles.activeTextStyle}
                             >
-                                <Text>Tab 2</Text>
+                                <Col>
+                                    <ToDoItem expanded />
+                                    <ToDoItem expanded />
+                                </Col>
                             </Tab>
                             <Tab
                                 noShadow
-                                heading="All"
+                                heading="To Do"
                                 style={styles.tabBarStyle}
                                 tabStyle={styles.tabStyle}
                                 textStyle={styles.textStyle}
@@ -95,7 +97,18 @@ export default class ToDoForm extends Component {
                             </Tab>
                             <Tab
                                 noShadow
-                                heading="All"
+                                heading="Priority"
+                                style={styles.tabBarStyle}
+                                tabStyle={styles.tabStyle}
+                                textStyle={styles.textStyle}
+                                activeTabStyle={styles.activeTabStyle}
+                                activeTextStyle={styles.activeTextStyle}
+                            >
+                                <Text>Tab 3</Text>
+                            </Tab>
+                            <Tab
+                                noShadow
+                                heading="Done"
                                 style={styles.tabBarStyle}
                                 tabStyle={styles.tabStyle}
                                 textStyle={styles.textStyle}

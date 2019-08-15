@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, TouchableWithoutFeedback } from 'react-native';
 import { Grid, Row, Col } from 'react-native-easy-grid'
 import {Card, CheckBox, Icon} from 'native-base';
+import { Actions } from 'react-native-router-flux';
 import {Colors, Metrics} from "../../Themes";
 
 export default class ToDoItem extends Component {
@@ -17,6 +18,9 @@ export default class ToDoItem extends Component {
 
     render(){
         return(
+            <TouchableWithoutFeedback
+                onPress={() => { Actions.createToDo()}}
+            >
                 <Row style={{ height: 80, width: Metrics.screenWidth, paddingLeft: 5, paddingRight: 5, }}>
                     <Card style={{flex: 1, borderRadius: 2, paddingLeft: 10}}>
                         <Grid>
@@ -34,6 +38,7 @@ export default class ToDoItem extends Component {
                         </Grid>
                     </Card>
                 </Row>
+            </TouchableWithoutFeedback>
         );
     }
 }

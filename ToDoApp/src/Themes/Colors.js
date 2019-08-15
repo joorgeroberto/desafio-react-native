@@ -22,6 +22,7 @@ const colors = {
   border: '#483F53',
   banner: '#5F3E63',
   gray: '#666666',
+  sge: '#007aff'
   //text: '#E0D7E5',
 }
 
