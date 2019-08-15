@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import { View, Text, StatusBar, Platform } from 'react-native';
 import { Grid, Row, Col } from 'react-native-easy-grid'
-import ToDoItem from '../smartComponents/ToDoItem';
+import ToDoItem from './/ToDoItem';
 import { Metrics } from "../../Themes";
-
-import {Card, Tabs, Header, Container, Body, Tab} from "native-base";
+import { Actions } from 'react-native-router-flux';
+import {Card, Tabs, Header, Container, Body, Tab, Icon, Fab} from "native-base";
 import Colors from "../../Themes/Colors";
+import {Action} from "redux";
 
 
 const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
@@ -118,6 +119,12 @@ export default class ToDoForm extends Component {
                                 <Text>Tab 3</Text>
                             </Tab>
                         </Tabs>
+                        <Fab
+                            style={{backgroundColor: Colors.facebook}}
+                            position="bottomRight"
+                            onPress={() => {Actions.createToDo()}}>
+                            <Icon name="md-add" style={{fontSize: 40}}/>
+                        </Fab>
                     </Row>
                 </Col>
             </Grid>

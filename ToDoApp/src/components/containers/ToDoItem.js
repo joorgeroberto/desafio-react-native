@@ -19,7 +19,8 @@ export default class ToDoItem extends Component {
     render(){
         return(
             <TouchableWithoutFeedback
-                onPress={() => { Actions.createToDo()}}
+                //onPress={() => { Actions.createToDo()}}
+                onPress={() => {}}
             >
                 <Row style={{ height: 80, width: Metrics.screenWidth, paddingLeft: 5, paddingRight: 5, }}>
                     <Card style={{flex: 1, borderRadius: 2, paddingLeft: 10}}>

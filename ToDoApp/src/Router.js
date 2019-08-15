@@ -2,10 +2,10 @@
 
 import React from 'react';
 import {Scene, Router, Actions, Stack} from 'react-native-router-flux';
-import ToDoForm from './components/smartComponents/ToDoForm'
-import CreateToDo from './components/smartComponents/CreateToDo'
-//import DrawerContent from './components/presentationComponents/DrawerContent';
-//import Gallery from './components/smartComponents/Gallery';
+import ToDoForm from './components/containers/ToDoForm'
+import CreateToDo from './components/containers/CreateToDo'
+//import DrawerContent from './components/common/DrawerContent';
+//import Gallery from './components/containers/Gallery';
 
 const RouterComponent = () => {
     return (
@@ -17,10 +17,10 @@ const RouterComponent = () => {
                         key="ToDoForm"
                         component={ToDoForm}
                         title="Tasks"
-                        //initial
+                        initial
                     />
                     <Scene
-                        initial
+                        //initial
                         hideNavBar
                         key="createToDo"
                         component={CreateToDo}

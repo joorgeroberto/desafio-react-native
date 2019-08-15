@@ -3,10 +3,10 @@ import { View, Text, StatusBar, Platform } from 'react-native';
 import { Grid, Row, Col } from 'react-native-easy-grid'
 import { Metrics } from "../../Themes";
 import { Actions } from 'react-native-router-flux';
-import { Tabs, Container, Header, Body, Tab, Left, Title, Icon, Button} from "native-base";
+import { Header, Body, Left, Title, Icon, Button} from "native-base";
 import Colors from "../../Themes/Colors";
-import {Card, CardSection, Input} from "../presentationComponents";
-
+import {Card, CardSection, Input, Switch, Picker} from "../common";
+import DieDate from '../common/DieDate'
 
 export default class CreateToDo extends Component {
     headerContent() {
@@ -42,7 +42,6 @@ export default class CreateToDo extends Component {
                                 <Card>
                                     <CardSection >
                                         <Input
-                                            //label="Email"
                                             labelType={'icon'}
                                             iconName={'md-today'}
                                             placeholder="Title"
@@ -50,43 +49,33 @@ export default class CreateToDo extends Component {
                                             value={true}
                                         />
                                     </CardSection>
+
                                     <CardSection >
-                                        <Input
-                                            //label="Email"
-                                            labelType={'icon'}
-                                            iconName={'md-stopwatch'}
-                                            placeholder="Die Date"
-                                            onChangeText={() => {}}
-                                            value={true}
-                                        />
-                                    </CardSection>
-                                    <CardSection >
-                                        <Input
-                                            //label="Email"
-                                            labelType={'icon'}
+                                        <Picker
                                             iconName={'md-pricetag'}
                                             placeholder="Type"
-                                            onChangeText={() => {}}
+                                            onValueChange={() => {}}
+                                        />
+                                    </CardSection>
+                                    <CardSection >
+                                        <DieDate
+                                            iconType={'Ionicons'}
+                                            iconName={'md-stopwatch'}
+                                        />
+                                    </CardSection>
+                                    <CardSection >
+                                        <Switch
+                                            onChangeValue={() => {}}
                                             value={true}
+                                            label={'Priority'}
                                         />
                                     </CardSection>
                                     <CardSection >
                                         <Input
-                                            //label="Email"
-                                            labelType={'switch'}
-                                            onChangeValue={()=>{}}
-                                            iconName={'md-today'}
-                                            placeholder="Priority"
-                                            onChangeText={() => {}}
-                                            value={true}
-                                        />
-                                    </CardSection>
-                                    <CardSection >
-                                        <Input
-                                            //label="Email"
                                             labelType={'icon'}
                                             multiline={true}
                                             onChangeValue={()=>{}}
+                                            iconType={'MaterialIcons'}
                                             iconName={'description'}
                                             placeholder="Description"
                                             onChangeText={() => {}}
